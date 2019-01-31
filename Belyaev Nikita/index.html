@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&amp;subset=cyrillic" rel="stylesheet">
+    <title>ToDo List</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__logo">ToDo List</h1>
+        <button class="header__menu-btn" id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <form class="header__new-task new-task" action="#">
+            <div class="new-task__wrapper">
+                <input class="new-task__input new-task__input--text" type="text">
+                <button class="new-task__btn" type="submit">Add</button>
+            </div>
+            <input class="new-task__input new-task__input--deadline" type="date">
+        </form>
+    </header>
+
+    <div class="wrapper">
+
+        <aside class="controls">
+            <p class="controls__counter"><span class="controls__done">0</span> of <span class="controls__total">0</span> done</p>
+            <form class="controls__form" action="#">
+                <fieldset>
+                    <legend>Show</legend>
+                    <div><input type="radio" name="show" id="show-all" checked> <label for="show-all">All</label></div>
+                    <div><input type="radio" name="show" id="show-done"> <label for="show-done">Done</label></div>
+                    <div><input type="radio" name="show" id="show-undone"> <label for="show-undone">Undone</label></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sort By</legend>
+                    <div><input type="radio" name="sort" id="sort-date-first" checked> <label for="sort-date-first">New First</label></div>
+                    <div><input type="radio" name="sort" id="sort-date-last"> <label for="sort-date-last">Recent First</label></div>
+                    <div><input type="radio" name="sort" id="sort-urgency"> <label for="sort-urgency">Urgency</label></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Deadline</legend>
+                    <div><input type="radio" name="deadline" id="deadline-all" checked> <label for="deadline-all">All</label></div>
+                    <div><input type="radio" name="deadline" id="deadline-day"> <label for="deadline-day">Next Day</label></div>
+                    <div><input type="radio" name="deadline" id="deadline-week"> <label for="deadline-week">This Week</label></div>
+                </fieldset>
+
+                <button class="controls__btn" id="clear-all">Clear All</button>
+                <button class="controls__btn" id="clear-checked">Clear Checked</button>
+            </form>
+        </aside>
+
+        <main class="task-list"></main>
+
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
